@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - PORT=$PORT
+    ports:
+      - "$DOCKER_PORT:$PORT"
+    volumes:
+      - .:/app
+      - /app/node_modules
